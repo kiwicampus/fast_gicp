@@ -165,6 +165,17 @@ if(BUILD_test)
   gtest_add_tests(TARGET gicp_test WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} EXTRA_ARGS "${CMAKE_SOURCE_DIR}/data")
 endif()
 
+install(
+  TARGETS
+    fast_vgicp_cuda
+  EXPORT fast_vgicp_cuda
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+  INCLUDES DESTINATION include
+)
+
+
 if(catkin_FOUND)
   ###################################
   ## catkin specific configuration ##
